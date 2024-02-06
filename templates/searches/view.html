@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-12 col-8 mx-auto">
+            <p class="lead">You searched for {{ query }}</p>
+
+            {% for item in blog_list %}
+                {% include 'blog/list-inline.html' with blog_post=item truncate=True detail=False %}
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}
